@@ -1,0 +1,9 @@
+{
+  "java.test.config": {
+    "workingDirectory": "${workspaceFolder}"
+  },
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.test.defaultConfig": "junit",
+  "java.test.method": "@Test",
+  "java.compile.nullAnalysis.mode": "automatic"
+}
