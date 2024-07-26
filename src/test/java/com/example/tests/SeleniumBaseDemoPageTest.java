@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -58,11 +60,11 @@ public class SeleniumBaseDemoPageTest {
         String expectedText = "MAPS is boring";
         demoPage.enterTextInput(expectedText);
         
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         
         String actualText = demoPage.getTextInputValue();
         assertEquals("Text input should match the entered value", expectedText, actualText);
-        System.out.println("testTextInputField passed: MAPS is boring");
+        System.out.println("testTextInputField passed: MAPS is boring entered and tested");
     }
 
     @Test
@@ -83,6 +85,7 @@ public class SeleniumBaseDemoPageTest {
         System.out.println("Running testIframeCheckbox...");
         try {
             demoPage.toggleIframeCheckbox();
+            Thread.sleep(5000); 
             assertTrue("Checkbox should be checked", demoPage.isIframeCheckboxChecked());
             System.out.println("testIframeCheckbox passed.");
         } catch (Exception e) {
@@ -96,10 +99,28 @@ public class SeleniumBaseDemoPageTest {
         System.out.println("Running testSelectDropdown...");
         try {
             demoPage.selectDropdownOption("Set to 50%");
+            Thread.sleep(5000);
             assertEquals("Meter value should be 50", "50", demoPage.getMeterValue());
             System.out.println("testSelectDropdown passed.");
         } catch (Exception e) {
             System.out.println("testSelectDropdown failed: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testPrintAllHyperlinkTexts() {
+        System.out.println("Running testPrintAllHyperlinkTexts...");
+        try {
+            List<String> hyperlinkTexts = demoPage.getAllHyperlinkTexts();
+            System.out.println("Hyperlink texts:");
+            for (String text : hyperlinkTexts) {
+                System.out.println(text);
+            }
+
+            System.out.println("testPrintAllHyperlinkTexts passed.");
+        } catch (Exception e) {
+            System.out.println("testPrintAllHyperlinkTexts failed: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -162,6 +183,15 @@ public class SeleniumBaseDemoPageTest {
         public String getMeterValue() {
             WebElement meter = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("meterValue")));
             return meter.getText();
+        }
+
+        public List<String> getAllHyperlinkTexts() {
+            List<WebElement> hyperlinks = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.tagName("a")));
+            List<String> hyperlinkTexts = new ArrayList<>();
+            for (WebElement hyperlink : hyperlinks) {
+                hyperlinkTexts.add(hyperlink.getText());
+            }
+            return hyperlinkTexts;
         }
     }
 }
