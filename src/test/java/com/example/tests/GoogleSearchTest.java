@@ -21,7 +21,7 @@ public class GoogleSearchTest {
 
     @Before
     public void setUp() {
-        System.out.println("Setting up the test...");
+        System.out.println("Setting up the test");
         String driverPath = System.getProperty("webdriver.chrome.driver", "/Users/deveshwari/Desktop/chromedriver-mac-arm64/chromedriver");
         if (driverPath == null || driverPath.isEmpty()) {
             throw new IllegalStateException("System property 'webdriver.chrome.driver' must be set");
