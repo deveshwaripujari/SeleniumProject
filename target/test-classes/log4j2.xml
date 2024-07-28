@@ -6,9 +6,9 @@
     </Console>
   </Appenders>
   <Loggers>
-    <Logger name="org.openqa.selenium" level="ERROR"/>
-    <Root level="info">
+    <Root level="error">
       <AppenderRef ref="Console"/>
     </Root>
+    <Logger name="org.openqa.selenium" level="OFF"/>
   </Loggers>
 </Configuration>

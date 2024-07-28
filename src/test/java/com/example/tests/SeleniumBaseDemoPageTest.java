@@ -27,6 +27,7 @@ public class SeleniumBaseDemoPageTest {
     public void setUp() {
         System.out.println("Setting up the test...");
         System.setProperty("webdriver.chrome.driver", "/Users/deveshwari/Desktop/chromedriver-mac-arm64/chromedriver");
+
         
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -129,12 +130,18 @@ public class SeleniumBaseDemoPageTest {
     public void tearDown() {
         System.out.println("Tearing down the test...");
         if (driver != null) {
+            try {
+                Thread.sleep(2000); // 2 seconds delay
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             driver.quit();
             System.out.println("Browser closed.");
         }
     }
 
-    // DemoPage class to encapsulate page interactions
+    // DemoPage class to encapsulate page interactions-
+    // Page Object for the demo page.
     private class DemoPage {
         private WebDriver driver;
         private WebDriverWait wait;
@@ -161,14 +168,14 @@ public class SeleniumBaseDemoPageTest {
         }
 
         public void toggleIframeCheckbox() {
-            driver.switchTo().frame("myFrame2");
+            driver.switchTo().frame("myFrame3");
             WebElement checkbox = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("checkBox6")));
             checkbox.click();
             driver.switchTo().defaultContent();
         }
 
         public boolean isIframeCheckboxChecked() {
-            driver.switchTo().frame("myFrame2");
+            driver.switchTo().frame("myFrame3");
             WebElement checkbox = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("checkBox6")));
             boolean isChecked = checkbox.isSelected();
             driver.switchTo().defaultContent();
