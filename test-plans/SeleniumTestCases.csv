@@ -1,0 +1,6 @@
+Pages Classes,Test Classes,Test Cases,Expected Results
+DemoPage,SeleniumBaseDemoPageTest,testTextInputField,"Text input should match the entered value ""MAPS is boring"""
+DemoPage,SeleniumBaseDemoPageTest,testSvgColor,SVG rect color should be retrieved (assertion needed)
+DemoPage,SeleniumBaseDemoPageTest,testIframeCheckbox,Checkbox should be checked after toggling
+DemoPage,SeleniumBaseDemoPageTest,testSelectDropdown,"Meter value should be 50 after selecting ""Set to 50%"""
+DemoPage,SeleniumBaseDemoPageTest,testPrintAllHyperlinkTexts,All hyperlink texts should be printed
