@@ -1,0 +1,40 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+*.jks
+
+# Maven
+/target/
+/dependency-reduced-pom.xml
+/buildNumber.properties
+
+# IDEs and Editors
+/.idea/
+/*.iml
+/.project
+/.classpath
+/.settings/
+*.sublime-workspace
+*.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/logs
+
