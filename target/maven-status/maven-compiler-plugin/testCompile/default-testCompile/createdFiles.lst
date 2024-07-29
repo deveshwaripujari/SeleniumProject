@@ -1,3 +1,2 @@
-com/example/tests/GoogleSearchTest.class
-com/example/tests/SeleniumBaseDemoPageTest.class
-com/example/tests/SeleniumBaseDemoPageTest$DemoPage.class
+com/example/pages/DemoPage.class
+com/example/tests/SeleniumBaseDemoTest.class
