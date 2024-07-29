@@ -15,6 +15,7 @@ public class SeleniumBaseDemoTest {
 
     @Before
     public void setUp() {
+        System.out.println("Setting up the test environment and opening the browser.");
         System.setProperty("webdriver.chrome.driver", "/Users/deveshwari/Desktop/chromedriver-mac-arm64/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox", "--disable-dev-shm-usage", "--remote-allow-origins=*");
@@ -66,6 +67,7 @@ public class SeleniumBaseDemoTest {
 
     @After
     public void tearDown() {
+        System.out.println("Tearing down the test environment and closing the browser.");
         if (driver != null) {
             driver.quit();
         }
