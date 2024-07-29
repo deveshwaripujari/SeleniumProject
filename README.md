@@ -13,7 +13,7 @@ This project automates the testing of the demo page available at [SeleniumBase D
 ### Setup
 1. Clone the repository:
     ```sh
-    git clone <https://github.com/deveshwaripujari/SeleniumProject.git>
+    git clone https://github.com/deveshwaripujari/SeleniumProject.git
     cd SeleniumProject
     ```
 
